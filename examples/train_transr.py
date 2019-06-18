@@ -7,7 +7,7 @@ import numpy as np
 #++++++++++++++TransE++++++++++++++++++++
 
 con = config.Config()
-con.set_in_path("./benchmarks/FB15K/")
+con.set_in_path("../benchmarks/FB15K/")
 con.set_work_threads(4)
 con.set_train_times(500)
 con.set_nbatches(100)
@@ -27,7 +27,7 @@ parameters = con.get_parameters("numpy")
 
 conR = config.Config()
 #Input training files from benchmarks/FB15K/ folder.
-conR.set_in_path("./benchmarks/FB15K/")
+conR.set_in_path("../benchmarks/FB15K/")
 #True: Input test files from the same folder.
 conR.set_test_link_prediction(True)
 conR.set_test_triple_classification(True)
@@ -44,9 +44,9 @@ conR.set_rel_neg_rate(0)
 conR.set_opt_method("SGD")
 
 #Models will be exported via tf.Saver() automatically.
-conR.set_export_files("./res/model.vec.tf", 0)
+conR.set_export_files("../res/FB15K/transR/model.vec.tf", 0)
 #Model parameters will be exported to json files automatically.
-conR.set_out_files("./res/embedding.vec.json")
+conR.set_out_files("../res/FB15K/transR/embedding.vec.json")
 #Initialize experimental settings.
 conR.init()
 #Load pretrained TransE results.

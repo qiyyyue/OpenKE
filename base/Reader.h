@@ -25,9 +25,7 @@ void importTrainFiles() {
 	printf("The toolkit is importing datasets.\n");
 	FILE *fin;
 	int tmp;
-
 	fin = fopen((inPath + "relation2id.txt").c_str(), "r");
-
 	if (fin == nullptr) {
 		std::cout << '`' << inPath << "relation2id.txt" << '`' << " does not exist"
 		          << std::endl;
@@ -229,7 +227,6 @@ void importTestFiles() {
 	std::sort(validList, validList + validTotal, Triple::cmp_rel2);
 	printf("The total of test triples is %ld.\n", testTotal);
 	printf("The total of valid triples is %ld.\n", validTotal);
-
 	testLef = (INT *)calloc(relationTotal, sizeof(INT));
 	testRig = (INT *)calloc(relationTotal, sizeof(INT));
 	memset(testLef, -1, sizeof(INT) * relationTotal);

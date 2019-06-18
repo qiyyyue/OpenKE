@@ -194,6 +194,8 @@ class Config(object):
 		self.importName = path
 
 	def set_export_files(self, path, steps = 0):
+
+
 		self.exportName = path
 		self.export_steps = steps
 
@@ -347,6 +349,7 @@ class Config(object):
 							break
 				if self.exportName != None:
 					self.save_tensorflow()
+
 				if self.out_path != None:
 					self.save_parameters(self.out_path)
 
